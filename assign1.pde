@@ -10,9 +10,8 @@ float robotX;
 float robotY;
 
 void setup() {
-	size(640, 480, P2D);
-
-  soldierX=0;
+  size(640, 480, P2D);
+	
   soldierY=80*floor(random(2,6));
   
   robotX=80*floor(random(2,8));
@@ -53,9 +52,8 @@ void draw() {
 	image(groundhog,280,80); 
    
    //soldier animation
-  image(soldier,soldierX,soldierY); 
-  soldierX++;
-  soldierX%=640;
+  image(soldier,soldierX-80,soldierY); 
+  soldierX = (soldierX + 1) % 720;
   
   //robot
   image(robot,robotX,robotY); 
